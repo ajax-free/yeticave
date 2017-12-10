@@ -19,19 +19,3 @@ INSERT INTO lots SET name = 'Маска Oakley Canopy', description = 'Опис�
 
 INSERT INTO bets SET create_ts = 1512331601, price = 8600, lot_id = 3, user_id = 2;
 INSERT INTO bets SET create_ts = 1512332601, price = 9400, lot_id = 3, user_id = 3;
-
-
-/* получить список из всех категорий */
-SELECT name FROM categories;
-
-/* получить самые новые, открытые лоты */
-SELECT * FROM lots WHERE expire_ts > 1512428601;
-
-/* найти лот по его названию или описанию */
-SELECT * FROM lots WHERE name LIKE 'Маска%' OR description LIKE '% и %';
-
-/* обновить название лота по его идентификатору */
-UPDATE lots SET name = 'Крепления Union Contact Pro 2015 года размер L/XL' WHERE id = 3;
-
-/* получить список самых свежих ставок для лота по его идентификатору */
-SELECT * FROM bets WHERE lot_id = 3;

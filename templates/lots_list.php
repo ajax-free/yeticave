@@ -23,7 +23,7 @@
                     </li><?php endforeach; ?>
 
                 </ul>
-            </section><? if (isset($data['pagination'])) : ?>
+            </section><?php if (isset($data['pagination'])) : ?>
 
             <ul class="pagination-list">
                 <li class="pagination-item pagination-item-prev"><a>Назад</a></li><?php foreach ($data['pagination'] as $val) : ?>

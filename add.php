@@ -4,6 +4,7 @@ require 'app/common.php';
 // запрет для незарегистрированных
 if (! isset($_SESSION['user'])) {
     http_response_code(403);
+    header('Location: /login.php');
     exit();
 }
 
@@ -57,8 +58,8 @@ if (isset($data['lot-date']) && $data['lot-date']) {
 
 // сохранение файла
 require 'app/save_img.php';
-$add_data['uploaded'] = $uploaded_class;
 $add_data['error']['img'] = $file_error;
+$add_data['uploaded'] = $uploaded_class;
 
 // выбранная категория
 foreach ($categories_list as $k => $val) {
